@@ -1,8 +1,8 @@
-# Todo Application API with React Frontend
+# Online Diary Application API with React Frontend
 
 ## Overview
 
-This project is a full-stack Todo Application consisting of a **Node.js backend** and a **React frontend**. The backend handles user authentication (via JWT), CRUD operations for todos, and file uploads. The frontend is built with React and allows users to interact with the API to manage their tasks.
+This project is a full-stack Online Diary Application consisting of a **Node.js backend** and a **React frontend**. The backend handles user authentication (via JWT), CRUD operations for diary entries, and file uploads. The frontend is built with React and allows users to interact with the API to manage their diary entries.
 
 ## Features
 
@@ -12,19 +12,19 @@ This project is a full-stack Todo Application consisting of a **Node.js backend*
   - User signup with email and password.
   - User login with email and password.
   - JWT authentication for protected routes.
-  - Account deletion with the removal of todos and associated images.
+  - Account deletion with the removal of diary entries and associated images.
   - Token refresh for session management.
-- **Todo Management**
-  - Add a new todo (with an image).
-  - Get all todos for a user.
-  - Update todo details such as title, description, and completion status.
-  - Delete todos and associated images.
+- **Diary Management**
+  - Add a new diary entry (with an image).
+  - Get all diary entries for a user.
+  - Update diary entry details such as title, content, and images.
+  - Delete diary entries and associated images.
 
 ### Frontend (React)
 
 - **Signup / Login** pages for user authentication.
-- **Todo Dashboard** to view, add, update, and delete todos.
-- **Image Upload** for adding images to todos.
+- **Diary Dashboard** to view, add, update, and delete diary entries.
+- **Image Upload** for adding images to diary entries.
 
 ## Setup
 
@@ -56,7 +56,7 @@ This project is a full-stack Todo Application consisting of a **Node.js backend*
    ```env
    PORT=8000
    MONGO_URL=mongodb://127.0.0.1/my_database
-   JWT_SECRET=todoapp
+   JWT_SECRET=diaryapp
    JWT_EXPIRATION_TIME=12h
    ```
 
@@ -157,49 +157,48 @@ This project is a full-stack Todo Application consisting of a **Node.js backend*
   }
   ```
 
-### Todo Endpoints
+### Diary Entry Endpoints
 
-#### 1. **Add Todo**
+#### 1. **Add Diary Entry**
 
-- **URL**: `/api/todo`
+- **URL**: `/api/diary`
 - **Method**: `POST`
 - **Headers**:
   - `Authorization: Bearer <jwt_token>`
 - **Body**:
   ```json
   {
-    "title": "Buy groceries",
-    "description": "Milk, eggs, bread, etc.",
+    "title": "My First Entry",
+    "content": "Today was a great day!",
     "image": "image_file" // Optional
   }
   ```
 
-#### 2. **Get Todos**
+#### 2. **Get Diary Entries**
 
-- **URL**: `/api/todo`
+- **URL**: `/api/diary`
 - **Method**: `GET`
 - **Headers**:
   - `Authorization: Bearer <jwt_token>`
 
-#### 3. **Update Todo**
+#### 3. **Update Diary Entry**
 
-- **URL**: `/api/todo/:id`
+- **URL**: `/api/diary/:id`
 - **Method**: `PUT`
 - **Headers**:
   - `Authorization: Bearer <jwt_token>`
 - **Body**:
   ```json
   {
-    "title": "Updated title",
-    "description": "Updated description",
-    "completed": true,
+    "title": "Updated Title",
+    "content": "Updated content for my diary entry.",
     "image": "new_image_file" // Optional
   }
   ```
 
-#### 4. **Delete Todo**
+#### 4. **Delete Diary Entry**
 
-- **URL**: `/api/todo/:id`
+- **URL**: `/api/diary/:id`
 - **Method**: `DELETE`
 - **Headers**:
   - `Authorization: Bearer <jwt_token>`
