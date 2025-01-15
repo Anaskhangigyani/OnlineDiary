@@ -1,6 +1,3 @@
-Sure! Here is the `README.md` in proper Markdown format that you can directly use:
-
-````markdown
 # Todo Application API with React Frontend
 
 ## Overview
@@ -45,7 +42,6 @@ This project is a full-stack Todo Application consisting of a **Node.js backend*
    git clone <repository_url>
    cd <repository_folder>
    ```
-````
 
 2. Install dependencies:
 
